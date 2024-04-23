@@ -1,4 +1,4 @@
-# Desing Patterns
+# Design Patterns
 
 ## 1. (❁´◡`❁) 생성 디자인 패턴
 
@@ -8,13 +8,13 @@
 ### 1-4. Prototype
 ### 1-5. Singleton
 
-## (●'◡'●) 구조 디자인 패턴
+## 2. (●'◡'●) 구조 디자인 패턴
 
 
-## (*^▽^*) 행동 디자인 패턴
+## 3. (*^▽^*) 행동 디자인 패턴
 
-## References
+## 4. References
 
-### 1. Geeks for Geeks
+### 4-1. Geeks for Geeks
 
-### 2. Refactoring Guru
+### 4-2. Refactoring Guru
