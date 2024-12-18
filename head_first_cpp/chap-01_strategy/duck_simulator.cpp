@@ -1,26 +1,39 @@
-#include "fly_behavoir.h"
-#include "quack_behavoir.h"
 #include "duck.h"
 
 
 // Cilent
 int main()
 {
-    Duck* mallard = new MallardDuck();
+    if (0) {
+        Duck* mallard = new MallardDuck();
 
-    mallard->performQuack();
-    mallard->performFly();
-    mallard->display();
-    mallard->swim();
+        mallard->performQuack();
+        mallard->performFly();
+        mallard->display();
+        mallard->swim();
 
-    Duck* model = new ModelDuck();
+        Duck* model = new ModelDuck();
 
-    model->performQuack();
-    model->performFly();
-    model->display();
-    model->swim();
+        model->performQuack();
+        model->performFly();
+        model->display();
+        model->swim();
 
-    delete mallard;
-    delete model;
+        delete mallard;
+        delete model;
+    }
+    if (1) {
+        auto mallard = MallardDuck();
+        mallard.performQuack();
+        mallard.performFly();
+        mallard.display();
+        mallard.swim();
+
+        auto model = ModelDuck();
+        model.performQuack();
+        model.performFly();
+        model.display();
+        model.swim();
+    }
     return 0;
 }
