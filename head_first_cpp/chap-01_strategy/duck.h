@@ -7,65 +7,56 @@ using namespace std;
 // Context
 // Abstract Class
 struct Duck {
-    FlyBehavoir* flyBehavoir;
-    QuackBehavoir* quackBehavoir;
+    FlyBehavoir* flyBehavior;
+    QuackBehavoir* quackBehavior;
 
     virtual ~Duck() = default;
-    void performFly() const {
-        flyBehavoir->fly();
-    }
-    void performQuack() const {
-        quackBehavoir->quack();
-    }
-    void swim() const {
-        cout << "All ducks float, even decoys!" << endl;
-    }
-    virtual void display() const = 0;
+    virtual void display() = 0;
 
-    void setFlyBehavoir(FlyBehavoir* fb) {
-        this->flyBehavoir = fb;
-    }
-    void setQuackBehavoir(QuackBehavoir* qb) {
-        this->quackBehavoir = qb;
-    }
+    void performFly() { flyBehavior->fly(); }
+    void performQuack() { quackBehavior->quack(); }
+    void swim() { cout << "All ducks float, even decoys!" << endl; }
+
+    void setFlyBehavoir(FlyBehavoir* fb) { flyBehavior = fb; }
+    void setQuackBehavoir(QuackBehavoir* qb) { quackBehavior = qb; }
 };
 
 struct MallardDuck : Duck {
     MallardDuck() {
-        flyBehavoir = new FlyWithWings();
-        quackBehavoir = new Quack();
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Quack();
     }
-    void display() const override {
+    void display() override {
         cout << "I'm real Mallard duck." << endl;
     }
 };
 
 struct RedheadDuck : Duck {
     RedheadDuck() {
-        flyBehavoir = new FlyWithWings();
-        quackBehavoir = new Quack();
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Quack();
     }
-    void display() const override {
+    void display() override {
         cout << "I'm real Red head duck." << endl;
     }
 };
 
 struct RubberDuck : Duck {
     RubberDuck() {
-        flyBehavoir = new FlyNoWay();
-        quackBehavoir = new Squeak();
+        flyBehavior = new FlyNoWay();
+        quackBehavior = new Squeak();
     }
-    void display() const override {
+    void display() override {
         cout << "I'm a rubber duck." << endl;
     }
 };
 
 struct ModelDuck : Duck {
     ModelDuck() {
-        flyBehavoir = new FlyNoWay();
-        quackBehavoir = new Quack();
+        flyBehavior = new FlyNoWay();
+        quackBehavior = new Quack();
     }
-    void display() const override {
+    void display() override {
         cout << "I'm a model duck." << endl;
     }
 };
