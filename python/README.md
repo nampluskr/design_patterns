@@ -16,5 +16,22 @@
 ## Behavior Patterns
 
 1. Strategy
+2. State
+3. Template Method
+4. Command
+5. Chain of Resposibility
+6. Oberver
+7. Memento
+8. Mediator
+9. Visitor
+10. Iterator
 
 ## Structural Patterns
+
+1. Adapter
+2. Proxy
+3. Facade
+4. Decorator
+5. Bridge
+6. Flyweight
+7. Composite
