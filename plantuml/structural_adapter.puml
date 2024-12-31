@@ -1,0 +1,31 @@
+@startuml
+
+title [Structural] Adapter Pattern
+
+class Client
+
+class Target {
+    + {abstract} request()
+}
+
+class Adapter {
+    - adaptee: Adaptee
+    + Adapter(adaptee: Adaptee)
+    + request()
+}
+
+class Adaptee {
+    + specificRequest()
+}
+
+Client -r-> Target
+Adapter -u-|> Target
+Adapter -r-> Adaptee
+
+hide empty members
+
+note left of Adapter::request
+    adaptee.specificRequest()
+end note
+
+@enduml
