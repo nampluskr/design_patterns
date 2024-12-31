@@ -1,0 +1,27 @@
+@startuml
+
+title [Structural] Bridge Pattern
+
+class Abstraction {
+    + operation()
+}
+
+interface Implementor {
+    + {abstract} operationImpl()
+}
+
+class ConcreteImplementorA {
+    + operationImpl()
+}
+
+class ConcreteImplementorB {
+    + operationImpl()
+}
+
+Abstraction *-r- Implementor
+Implementor <|.d. ConcreteImplementorA
+Implementor <|.d. ConcreteImplementorB
+
+hide empty members
+
+@enduml
