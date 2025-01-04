@@ -8,7 +8,7 @@ using namespace std;
 
 // Interface
 struct Component {
-    virtual ~Component() {}
+    virtual ~Component() = default;
     virtual string operation() = 0;
 };
 
@@ -20,6 +20,7 @@ struct ConcreteComponent : Component {
 
 struct Decorator : Component {
     Decorator(Component* component) : _component(component) {}
+    virtual ~Decorator() = default;
     string operation() override { return _component->operation(); }
 protected:
     Component* _component;

@@ -1,5 +1,4 @@
 ﻿@startuml
-'!pragma layout smetana
 skinparam classAttributeIconSize 0
 
 title [Structural] Bridge Pattern
