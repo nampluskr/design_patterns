@@ -26,8 +26,8 @@ class Composite {
   + operation()
 }
 
-Component <|-d- Leaf
-Component <|-d- Composite
+Component <|-- Leaf
+Component <|-- Composite
 Component::add <--o Composite::_children
 
 hide empty members

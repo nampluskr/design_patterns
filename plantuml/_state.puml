@@ -1,10 +1,9 @@
 ﻿@startuml
-!pragma layout smetana
+'!pragma layout smetana
 skinparam classAttributeIconSize 0
 
 title [Behavioral] Strategy Pattern
 
-together {
 class Client
 class Context {
     - _state : State*
@@ -17,10 +16,7 @@ class Context {
     + request1()
     + request2()
 }
-}
-Client --> Context
 
-together {
 abstract State {
    # _context : Context*
    --
@@ -41,11 +37,11 @@ class StateB {
    + handle1()
    + handle2()
 }
-}
+
+Client --> Context
+Context o- State
 State <|.. StateA
 State <|.. StateB
-
-Context o-r- State
 
 hide empty members
 
