@@ -9,7 +9,9 @@ struct Context;
 // State Interface
 struct State {
     virtual ~State() = default;
+
     void setContext(Context* context) { _context = context; }
+
     virtual string getName() = 0;
     virtual void handle1() = 0;
     virtual void handle2() = 0;

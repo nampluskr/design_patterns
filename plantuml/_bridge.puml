@@ -1,0 +1,45 @@
+﻿@startuml
+!pragma layout smetana
+skinparam classAttributeIconSize 0
+
+title [Structural] Bridge Pattern
+
+together {
+class Client
+class Abstraction {
+    # _impl : Implementation*
+    --
+    + Abstraction()
+    + Abstraction(Implementation*)
+    + {abstract} ~Abstraction()
+    ..
+    + operation()
+}
+class ExtendedAbstraction {
+    + operation()
+}
+}
+Client --> Abstraction
+Abstraction <|-- ExtendedAbstraction
+
+together {
+Abstract Implementation {
+    + {abstract} ~Implementation()
+    ..
+    + {abstract} operationImpl()
+}
+class ImplementationA {
+    + operationImpl()
+}
+class ImplementationB {
+    + operationImpl()
+}
+}
+Implementation <|.. ImplementationA
+Implementation <|.. ImplementationB
+
+Abstraction o-r- Implementation
+
+hide empty members
+
+@enduml

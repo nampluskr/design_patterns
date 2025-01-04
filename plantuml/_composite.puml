@@ -1,0 +1,35 @@
+﻿@startuml
+'!pragma layout smetana
+'skin rose
+skinparam classAttributeIconSize 0
+
+title [Structural] Composite Pattern
+
+class Component {
+  + {abstract} ~Component()
+  ..
+  + add(Component*) {}
+  + remove(Component*) {}
+  + isComposite() { return false; }
+  + {abstract} operation()
+}
+
+class Leaf {
+  + operation()
+}
+
+class Composite {
+  # _children: list<Component*>
+  + add(Component*)
+  + remove(Component*)
+  + isComposite() { return true; }
+  + operation()
+}
+
+Component <|-d- Leaf
+Component <|-d- Composite
+Component::add <--o Composite::_children
+
+hide empty members
+
+@enduml

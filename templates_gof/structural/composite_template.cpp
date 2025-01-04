@@ -18,7 +18,7 @@ struct Component {
     //void setParent(Component* parent) { _parent = parent; }
 
 protected:
-    Component* _parent;
+    // Component* _parent;
 };
 
 
