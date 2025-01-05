@@ -1,0 +1,37 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+
+title [Structural] Proxy Pattern
+
+interface Subject {
+    + {abstract} ~Subject()
+    ..
+    + {abstract} request()
+}
+class RealSubject {
+    + RealSubject()
+    + request()
+}
+class VirtualProxy {
+    + ~VirtualProxy()
+    ..
+    + request()
+}
+class ProtectedProxy {
+    - _subject : Subject*
+    - canAcess : bool
+    --
+    + ProtectedProxy(Subject*, canAccess)
+    + ~ProtectedProxy()
+    + request()
+}
+
+Client -> Subject
+Subject <|-- RealSubject
+Subject <|-- VirtualProxy
+RealSubject <- VirtualProxy
+Subject <|-- ProtectedProxy
+
+hide empty members
+
+@enduml

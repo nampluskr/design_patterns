@@ -1,31 +1,29 @@
-@startuml
+﻿@startuml
+skinparam classAttributeIconSize 0
 
 title [Structural] Adapter Pattern
 
-class Client
-
 class Target {
-    + {abstract} request()
-}
-
-class Adapter {
-    - adaptee: Adaptee
-    + Adapter(adaptee: Adaptee)
+    + {abstract} ~Target()
+    ..
     + request()
 }
-
+class Adapter {
+    - _adaptee : Adaptee*
+    --
+    Adapter(Adaptee*)
+    ~Adapter()
+    ..
+    + request()
+}
 class Adaptee {
-    + specificRequest()
+  + specificRequest()
 }
 
-Client -r-> Target
-Adapter -u-|> Target
-Adapter -r-> Adaptee
+Client -> Target
+Target <|-- Adapter
+Adapter o- Adaptee
 
 hide empty members
-
-note left of Adapter::request
-    adaptee.specificRequest()
-end note
 
 @enduml
