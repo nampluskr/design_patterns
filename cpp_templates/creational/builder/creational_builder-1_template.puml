@@ -1,0 +1,59 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Factory Method Pattern
+
+note as N1
+director->setBuilder(builder);
+
+director->buildMinimalProduct();
+product1 = builder->getResult();
+
+director->buildFullProduct();
+product2 = builder->getResult();
+end note
+
+class Director {
+  - _builder : Builder*
+  --
+  + ~Director()
+  ..
+  + setBuilder(Builder*)
+  + buildMinimalProduct()
+  + buildFullProduct()
+}
+
+interface Builder {
+  + {abstract} ~Builder()
+  ..
+  + {abstract} buildPartA()
+  + {abstract} buildPartB()
+  + {abstract} buildPartC()
+  + {abstract} getResult() : Product*
+}
+class ConcreteBuilder {
+  - _product : Product*
+  --
+  + ConcreteBuilder()
+  + ~ConcreteBuilder()
+  ..
+  + buildPartA()
+  + buildPartB()
+  + buildPartC()
+  + getResult() : Product*
+}
+
+class Product {
+  + partA
+  + partB
+  + partC
+  + show()
+}
+
+N1 -u- Director
+Director -> Builder
+Builder <|-- ConcreteBuilder
+ConcreteBuilder o-> Product
+
+hide empty members
+
+@enduml
