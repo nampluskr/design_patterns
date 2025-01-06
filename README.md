@@ -2,8 +2,8 @@
 
 |Creational|Structural|Behavioral|
 |---|---|---|
-|[x] Factory Method  |Adapter  |Chain of ressponsibility
-|[ ] Abstract Factory|Bridge   |Command
+|Factory Method  |Adapter  |Chain of ressponsibility
+|Abstract Factory|Bridge   |Command
 |Builder         |Composite|Iterator
 |Prototype       |Decorator|Mediator
 |Singleton       |Facade   |Memento
