@@ -1,0 +1,58 @@
+@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Visitor Pattern
+
+'note as N1
+'...
+'end note
+
+interface Element {
+  + {abstract} ~Element()
+  ..
+  + {abstract} accept(Visitor*)
+}
+class ElementA {
+  - _dataA
+  --
+  + ElementA(data)
+  ..
+  + getDataA()
+  + accept(Visitor*)
+}
+class ElementB {
+  - _dataB
+  --
+  + ElementB(data)
+  ..
+  + getDataB()
+  + accept(Visitor*)
+}
+
+interface Visitor {
+  + {abstract} ~Visitor()
+  ..
+  + {abstract} visit(ElementA*)
+  + {abstract} visit(ElementB*)
+}
+class Visitor1 {
+  + visit(ElementA*)
+  + visit(ElementB*)
+}
+class Visitor2 {
+  + visit(ElementA*)
+  + visit(ElementB*)
+}
+
+'Client ..> Element
+Element <|.. ElementA
+Element <|.. ElementB
+
+'Client .> Visitor
+Visitor <|.. Visitor1
+Visitor <|.. Visitor2
+
+'Client -- N1
+
+hide empty members
+
+@enduml
