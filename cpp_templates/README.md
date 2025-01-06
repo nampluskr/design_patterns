@@ -28,8 +28,8 @@
 - [ ] Observer
 - [ ] State
 - [ ] Strategy
-- [ ] Template method
-- [ ] Visitor
+- [x] Template method
+- [x] Visitor
 - [ ] Interpreter
 
 ## Prompt (요청사항)
