@@ -1,0 +1,42 @@
+@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Template Method Pattern
+
+note as N1
+classA = new ConcreteClassA();
+classA->templateMethod();
+
+classB = new ConcreteClassB();
+classB->templateMethod();
+end note
+
+abstract AbstractClass {
+  + {abstract} ~AbstractClass()
+  ..
+  + templateMethod()
+  # {abstract} primitiveOperation1()
+  # {abstract} primitiveOperation2()
+  # {abstract} primitiveOperation3()
+  # {abstract} hook() : bool
+}
+class ConcreteClassA {
+  # primitiveOperation1()
+  # primitiveOperation2()
+  # primitiveOperation3()
+}
+class ConcreteClassB {
+  # primitiveOperation1()
+  # primitiveOperation2()
+  # primitiveOperation3()
+  # hook() : bool
+}
+
+Client -> AbstractClass
+AbstractClass <|-- ConcreteClassA
+AbstractClass <|-- ConcreteClassB
+
+Client -- N1
+
+hide empty members
+
+@enduml
