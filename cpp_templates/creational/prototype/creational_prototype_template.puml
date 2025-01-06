@@ -1,0 +1,50 @@
+@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Prototype Pattern
+
+note as N1
+prototypeA = new PrototypeA(dataA);
+cloneA1 = prototypeA->clone();
+
+prototypeB = new PrototypeB(dataB);
+cloneB1 = prototypeB->clone();
+
+derivedB = new DerivedPrototypeB(data);
+end note
+
+interface Prototype {
+  + {abstract} ~Prototype()
+  ..
+  + {abstract} clone() : Prototype*
+  + {abstract} print()
+}
+class PrototypeA {
+  - _dataA
+  --
+  + PrototypeA(dataA)
+  + PrototypeA(PrototypeA*)
+  + clone() : Prototype
+  + print()
+}
+class PrototypeB {
+  - _dataB
+  # _protectedDataB
+  --
+  + PrototypeB(dataB)
+  + PrototypeB(PrototypeB*)
+  + clone() : Prototype
+  + print()
+}
+class DerivedPrototypeB {
+  + DerivedPrototypeB(data)
+  ..
+  + printDevied()
+}
+Client -> Prototype
+Prototype <|.. PrototypeA
+Prototype <|.. PrototypeB
+PrototypeB <|-- DerivedPrototypeB
+
+hide empty members
+
+@enduml
