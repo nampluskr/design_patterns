@@ -2,11 +2,11 @@
 
 ## 1. Creational Design Patterns (5)
 
-- [ ] Factory Method
-- [ ] Abstract Factory
-- [ ] Builder
-- [ ] Prototype
-- [ ] Singleton
+- [x] Factory Method
+- [x] Abstract Factory
+- [x] Builder
+- [x] Prototype
+- [x] Singleton
 
 ## 2. Structural Desing Patterns (7)
 
