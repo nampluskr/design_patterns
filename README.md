@@ -49,6 +49,8 @@
 
 ## 4. References
 
+- [Design Patterns: C++](https://d-yong.tistory.com/tag/DesignPattern)
+
 ### 4-1. Geeks for Geeks
 
 - [Software Design Patterns Tutorial](https://www.geeksforgeeks.org/software-design-patterns/)
