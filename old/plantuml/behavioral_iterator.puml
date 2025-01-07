@@ -1,4 +1,4 @@
-﻿@startuml
+@startuml
 skinparam classAttributeIconSize 0
 
 title [Behavioral] Iterator Pattern
@@ -18,12 +18,15 @@ interface Iterator {
   + {abstract} ~Iterator()
   ..
   + {abstract} hasNext() : bool
-  + {abstract} next() : Item
+  + {abstract} getNext() : Item
 }
 class ConcreteIterator {
   - _collection : vector<Item>
-  + addItem(Item)
-  + createIterator() : Iterator*
+  --
+  + ConcreteIterator(&collection) 
+  ..
+  + hasNext() : bool
+  + getNext() : Item
 }
 
 Aggregate <|-- ConcreteAggregate
