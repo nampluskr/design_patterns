@@ -1,0 +1,38 @@
+﻿@startuml
+'!pragma layout smetana
+skinparam classAttributeIconSize 0
+
+title [Behavioral] Observer Pattern
+
+class Subject {
+  - _observers : vector<Observer*>
+  - _state
+  --
+  + ~Context()
+  ..
+  + getState()
+  + setState(state)
+  + attach(Observer*)
+  + detach(Observer*)
+  # notify()
+}
+
+Abstract Observer {
+    + {abstract} ~Observer()
+    ..
+    + {abstract} update(Subject*)
+}
+class ObserverA {
+    + update(Subject*)
+}
+class ObserverB {
+    + update(Subject*)
+}
+
+Subject o- Observer
+Observer <|.. ObserverA
+Observer <|.. ObserverB
+
+hide empty members
+
+@enduml
