@@ -17,9 +17,8 @@ struct Singleton {
     Singleton& operator=(Singleton&& other) = delete;       // 이동 대입 연산자 삭제
 
     static Singleton& getInstance() {
-        if (!_instance) {
+        if (!_instance)
             _instance = new Singleton(42); // 스레드 안전하지 않음!
-        }
         return *_instance;
     }
     void printData() { cout << "Singleton Data: " << _data << endl; }
