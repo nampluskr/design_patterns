@@ -2,35 +2,35 @@
 
 ## 1. Creational Design Patterns (5)
 
-- [x] Factory Method
-- [x] Abstract Factory
-- [x] Builder
-- [x] Prototype
-- [x] Singleton
+### Factory Method
+### Abstract Factory
+### Builder
+### Prototype
+### Singleton
 
 ## 2. Structural Desing Patterns (7)
 
-- [ ] Adapter
-- [ ] Bridge
-- [ ] Composite
-- [ ] Decorator
-- [ ] Facade
-- [ ] Flyweight
-- [ ] Proxy
+### Adapter
+### Bridge
+### Composite
+### Decorator
+### Facade
+### Flyweight
+### Proxy
 
 ## 3. Behavioral Design Patterns (11)
 
-- [ ] Chain of ressponsibility
-- [ ] Command
-- [ ] Iterator
-- [ ] Mediator
-- [ ] Memento
-- [ ] Observer
-- [ ] State
-- [ ] Strategy
-- [x] Template method
-- [x] Visitor
-- [ ] Interpreter
+### Chain of ressponsibility
+### Command
+### Iterator
+### Mediator
+### Memento
+### Observer
+### State
+### Strategy
+### Template method
+### Visitor
+### Interpreter
 
 ## Prompt (요청사항)
 

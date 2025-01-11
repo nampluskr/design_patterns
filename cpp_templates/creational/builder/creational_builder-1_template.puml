@@ -1,6 +1,6 @@
 ﻿@startuml
 skinparam classAttributeIconSize 0
-title [Creational] Factory Method Pattern
+title [Creational] Builder Method Pattern
 
 note as N1
 director->setBuilder(builder);

@@ -1,6 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0
-title [Creational] Abstract Factory Method Pattern
+title [Creational] Abstract Factory Pattern
 
 'note as N1
 '...
