@@ -20,8 +20,8 @@ class VirtualProxy {
     + request()
 }
 class ProtectionProxy {
-    - _subject: Subject*
-    - canAcess: bool
+    - _subject : Subject*
+    - canAcess : bool
     --
     + ProtectionProxy(Subject*, canAccess)
     + ~ProtectionProxy()
@@ -31,8 +31,9 @@ class ProtectionProxy {
 Client -> Subject
 Subject <|-- RealSubject
 Subject <|-- VirtualProxy
-RealSubject <- VirtualProxy
+'RealSubject <- VirtualProxy
 Subject <|-- ProtectionProxy
+'RealSubject <|-r- ProtectionProxy
 
 hide empty members
 

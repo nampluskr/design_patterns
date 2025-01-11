@@ -14,7 +14,7 @@ struct SubsystemB {
     void operationB2() { cout << "SubsystemB: Operation B2\n"; }
 };
 
-// 서브시스템A3
+// 서브시스템 3
 struct SubsystemC{
     void operationC1() { cout << "SubsystemC: Operation C1\n"; }
     void operationC2() { cout << "SubsystemC: Operation C2\n"; }

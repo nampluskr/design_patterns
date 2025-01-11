@@ -1,0 +1,45 @@
+﻿@startuml
+'!pragma layout smetana
+'skin rose
+skinparam classAttributeIconSize 0
+
+title [Structural] Facade Pattern
+
+class Client
+
+class Facade {
+  - _subsystemA
+  - _subsystemB
+  - _subsystemC
+  --
+  + Facade(name)
+  + ~Facade()
+  ..
+  + operationA()
+  + operationB()
+}
+
+class SubsystemA {
+  - _name
+  --
+  + SubsystemA(name)
+  ..
+  + operation1()
+  + operation2()
+}
+class SubsystemB {
+  + operation1()
+}
+class SubsystemC {
+  + operation1()
+  + operation2()
+}
+
+Client -> Facade
+Facade *-- SubsystemA
+Facade *-- SubsystemB
+Facade *-- SubsystemC
+
+hide empty members
+
+@enduml
