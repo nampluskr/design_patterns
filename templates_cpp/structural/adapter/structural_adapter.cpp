@@ -32,7 +32,6 @@ int main()
 {
     Target* target = new Target;
     target->request();
-    delete target;
 
     cout << endl;
     Target* adapter = new Adapter(new Adaptee); // 어댑터를 통해 Adaptee 사용

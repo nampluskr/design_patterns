@@ -32,3 +32,6 @@
 - 주석과 설명을 첨부할 것
 - from abc import ABC, abstractmethod 사용할 것
 - type hint 사용할 것
+
+- 다음 C++ 코드를 분석하고 (스마트 포인트 미사용 할 것), python 코드로 일대일 변환해 주세요.
+- 위 파이썬 코드에 대한 클래스 다이어그램을 그리기 위한 plantuml 코드를 작성해 주세요.
