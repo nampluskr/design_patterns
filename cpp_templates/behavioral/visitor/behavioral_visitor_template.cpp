@@ -25,7 +25,6 @@ struct ElementA : public Element {
     ElementA(int data) { _dataA = data; }
     int getDataA() const { return _dataA; }
     void accept(Visitor* visitor) override { visitor->visit(this); }
-
 private:
     int _dataA;
 };
@@ -33,7 +32,7 @@ private:
 // 구체적인 Element B
 struct ElementB : public Element {
     ElementB(const string& data) { _dataB = data; }
-    const string& getDataB() const { return _dataB; }
+    string getDataB() { return _dataB; }
     void accept(Visitor* visitor) override { visitor->visit(this); }
 private:
     string _dataB;
@@ -63,7 +62,7 @@ int main()
 
     for (Element* element : elements) {
         element->accept(&visitor1);
-        //element->accept(&visitor2);
+        element->accept(&visitor2);
     }
 
     for (Element* element : elements) {

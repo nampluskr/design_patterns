@@ -12,19 +12,19 @@ interface Element {
   + {abstract} accept(Visitor*)
 }
 class ElementA {
-  - _dataA
+  - _dataA : int
   --
   + ElementA(data)
   ..
-  + getDataA()
+  + getDataA() : int
   + accept(Visitor*)
 }
 class ElementB {
-  - _dataB
+  - _dataB : string
   --
   + ElementB(data)
   ..
-  + getDataB()
+  + getDataB() : string
   + accept(Visitor*)
 }
 

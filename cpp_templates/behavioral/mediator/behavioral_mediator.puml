@@ -1,0 +1,51 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+
+title [Behavioral] Mediator Pattern
+
+interface Mediator {
+  + {abstract} ~Mediator()
+  ..
+  + {abstract} sendMessage(message, College*)
+}
+class ConcreteMediator {
+  - _colleagueA : ColleagueA
+  - _colleagueB : ColleagueB
+  + setColleagueA(ColleagueA*)
+  + setColleagueA(ColleagueB*)
+  + sendMessage(message, College*)
+}
+
+interface Colleague {
+  # _mediator : Mediator*
+  --
+  + Colleague(Mediator*)
+  + {abstract} ~Colleague()
+  ..
+  + {abstract} receiveMessage(message)
+  + {abstract} sendMessage(message)
+}
+class ColleagueA {
+  + ColleagueA(Mediator*)
+  ..
+  + receiveMessage(message)
+  + sendMessage(message)
+}
+class ColleagueB {
+  + ColleagueB(Mediator*)
+  ..
+  + receiveMessage(message)
+  + sendMessage(message)
+}
+
+Mediator <|-- ConcreteMediator
+Mediator <- Colleague
+Colleague <|-- ColleagueA
+Colleague <|-- ColleagueB
+
+ConcreteMediator o- ColleagueB
+ConcreteMediator o- ColleagueA
+
+hide empty members
+
+@enduml
