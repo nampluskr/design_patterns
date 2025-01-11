@@ -2,37 +2,37 @@
 
 ## 1. Creational Design Patterns (5)
 
-### Factory Method
-### Abstract Factory
-### Builder
-### Prototype
-### Singleton
+- Factory Method
+- Abstract Factory
+- Builder
+- Prototype
+- Singleton
 
 ## 2. Structural Desing Patterns (7)
 
-### Adapter
-### Bridge
-### Composite
-### Decorator
-### Facade
-### Flyweight
-### Proxy
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
 
 ## 3. Behavioral Design Patterns (11)
 
-### Chain of ressponsibility
-### Command
-### Iterator
-### Mediator
-### Memento
-### Observer
-### State
-### Strategy
-### Template method
-### Visitor
-### Interpreter
+- Chain of ressponsibility
+- Command
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template method
+- Visitor
+- Interpreter
 
-## Prompt (요청사항)
+## Prompt (Gemini 2.0)
 
 - 디자인 패턴을 학습하고 적용하기 위해 디자인 패턴의 구조를 템플릿 형태로 표현한 코드를 작성 (C++ 의 템플릿 문법이 아님)
 - 디자인 패턴을 공부하기 위한 상세한 주석 표기할 것
