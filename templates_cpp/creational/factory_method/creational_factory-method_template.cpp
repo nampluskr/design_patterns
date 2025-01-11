@@ -29,7 +29,7 @@ struct Creator {
     void someOperation() {
         Product* product = this->factoryMethod();
         product->operation();
-        delete product;
+        // delete product;      // double free 위험
     }
 };
 
