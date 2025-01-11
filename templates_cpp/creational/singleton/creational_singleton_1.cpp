@@ -33,7 +33,8 @@ private:
 Singleton* Singleton::_instance = nullptr;
 
 
-int main() {
+int main()
+{
     Singleton& singleton = Singleton::getInstance();
     singleton.printData();
     singleton.setData(100);
