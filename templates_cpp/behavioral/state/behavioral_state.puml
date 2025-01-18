@@ -1,0 +1,49 @@
+@startuml
+'!pragma layout smetana
+skinparam classAttributeIconSize 0
+
+title [Behavioral] State Pattern
+
+abstract Context {
+  - _state : State*
+  --
+  + {abstract} ~Context()
+  ..
+  + setState(State*)
+  + {abstract} request()
+}
+class ConcreteContext {
+  + ConcreteContext()
+  + ~ConcreteContext()
+  ..
+  + request()
+}
+
+
+abstract State {
+  # _context : Context*
+  --
+  + {abstract} ~State()
+  ..
+  + setContext(Context*)
+  + {abstract} handle()
+}
+class StateA {
+  + StateA(Context*)
+  ..
+  + handle()
+}
+class StateB {
+  + StateB(Context*)
+  ..
+  + handle()
+}
+
+Context o- State
+Context <|-- ConcreteContext
+State <|.. StateA
+State <|.. StateB
+
+hide empty members
+
+@enduml

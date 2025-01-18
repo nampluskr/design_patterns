@@ -1,0 +1,39 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+title [Behavioral] Iterator Pattern
+
+interface Aggregate {
+  + {abstract} ~Aggregate()
+  ..
+  + {abstract} createIterator()
+}
+class ConcreteAggregate {
+  - _collection : vector<Item>
+  + addItem(Item)
+  + createIterator() : Iterator*
+}
+
+interface Iterator {
+  + {abstract} ~Iterator()
+  ..
+  + {abstract} hasNext() : bool
+  + {abstract} getNext() : Item
+}
+class ConcreteIterator {
+  - _collection : vector<Item>
+  --
+  + ConcreteIterator(&collection) 
+  ..
+  + hasNext() : bool
+  + getNext() : Item
+}
+
+Aggregate <|-- ConcreteAggregate
+Iterator <|-- ConcreteIterator
+ConcreteAggregate <- ConcreteIterator
+ConcreteAggregate .> ConcreteIterator
+
+hide empty members
+
+@enduml

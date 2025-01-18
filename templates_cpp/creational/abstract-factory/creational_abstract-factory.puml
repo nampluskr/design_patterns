@@ -1,0 +1,65 @@
+@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Abstract Factory Pattern
+
+'note as N1
+'...
+'end note
+
+interface ProductA {
+  + {abstract} ~ProductA()
+  ..
+  + {abstract} operationA()
+}
+class ProductA1 {
+  + operationA()
+}
+class ProductA2 {
+  + operationA()
+}
+
+interface ProductB {
+  + {abstract} ~ProductB()
+  ..
+  + {abstract} operationB()
+  + {abstract} interact(ProductA*)
+}
+class ProductB1 {
+  + operationB()
+  + interact(ProductA*)
+}
+class ProductB2 {
+  + operationB()
+  + interact(ProductA*)
+}
+
+interface Factory {
+  + {abstract} ~Factory()
+  ..
+  + {abstract} createProductA() : ProductA
+  + {abstract} createProductB() : ProductB
+}
+class Factory1 {
+  + createProductA() : ProductA
+  + createProductB() : ProductB
+}
+class Factory2 {
+  + createProductA() : ProductA
+  + createProductB() : ProductB
+}
+
+ProductA <|.u. ProductA1
+ProductA <|.d. ProductA2
+
+Factory <|.u. Factory1
+Factory <|.d. Factory2
+
+ProductB <|.u. ProductB1
+ProductB <|.d. ProductB2
+
+Factory .l.> ProductB
+Factory .r.> ProductA
+
+hide empty members
+
+@enduml

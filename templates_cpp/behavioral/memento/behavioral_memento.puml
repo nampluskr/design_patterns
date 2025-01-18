@@ -1,0 +1,38 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+
+title [Behavioral] Memento Pattern
+
+class Originator {
+  - _state
+  + setState(state)
+  + createMemento() : Memento*
+  + restoreMememto(Memento*)
+  + showState()
+  
+}
+class Memento {
+  - _state
+  --
+  + Memento(state)
+  ..
+  + getState()
+}
+class Caretaker {
+  - _mementos : list<Memento*>
+  --
+  ~Caretaker()
+  ..
+  + addMemento(Memento*)
+  + getMemento() : Memento*
+  + undo(Originator*)
+  + redo(Originator*)
+  + showCurrentIndex()
+}
+
+Originator .> Memento
+Memento <-o Caretaker
+
+hide empty members
+
+@enduml

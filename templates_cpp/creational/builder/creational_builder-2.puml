@@ -1,0 +1,45 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Builder Pattern
+
+note as N1
+product = builder->buildPartA("A1")
+                 ->buildPartB("B1")
+                 ->buildPartC("C1")
+                 ->getResult();
+end note
+
+interface Builder {
+  + {abstract} ~Builder()
+  ..
+  + {abstract} buildPartA(value) : Builder*
+  + {abstract} buildPartB(value) : Builder*
+  + {abstract} buildPartC(value) : Builder*
+  + {abstract} getResult() : Product*
+}
+class ConcreteBuilder {
+  - _product : Product*
+  --
+  + ConcreteBuilder()
+  + ~ConcreteBuilder()
+  ..
+  + buildPartA(value) : Builder*
+  + buildPartB(value) : Builder*
+  + buildPartC(value) : Builder*
+  + getResult() : Product*
+}
+
+class Product {
+  + partA
+  + partB
+  + partC
+  + show()
+}
+
+Builder - N1
+Builder <|-- ConcreteBuilder
+ConcreteBuilder o-> Product
+
+hide empty members
+
+@enduml

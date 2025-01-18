@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Singleton Pattern
+
+note as N1
+singleton = Singleton::getInstance();
+end note
+
+class Singleton {
+  - _data
+  + {static} _instance : Singleton*
+  --
+  + Singleton(data)
+  ..
+  + {static} getInstance() : Singleton*
+  + printData()
+  + setData(data)
+}
+
+Client -> Singleton
+Singleton::getInstance -> Singleton
+
+N1 --> Client
+
+hide empty members
+
+@enduml

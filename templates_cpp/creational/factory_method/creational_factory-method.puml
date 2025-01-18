@@ -1,0 +1,46 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Factory Method Pattern
+
+note as N1
+Product* product = factoryMethod()
+product->operation()
+delete product
+end note
+
+interface Creator {
+  + {abstract} ~Creator()
+  ..
+  + someOperation()
+  + {abstract} factoryMethod() : Product*
+}
+class CreatorA {
+  + factoryMethod() : Product*
+}
+class CreatorB {
+  + factoryMethod() : Product*
+}
+
+interface Product {
+  + {abstract} ~Product()
+  ..
+  + {abstract} operation()
+}
+class ProductA {
+  + operation()
+}
+class ProductB {
+  + operation()
+}
+
+N1 -> Creator::someOperation
+Creator .> Product
+Creator <|.. CreatorA
+Creator <|.. CreatorB
+
+Product <|.. ProductA
+Product <|.. ProductB
+
+hide empty members
+
+@enduml

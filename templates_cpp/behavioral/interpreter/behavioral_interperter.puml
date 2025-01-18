@@ -1,0 +1,62 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+title [Creational] Interpreter Pattern
+
+'note as N1
+'...
+'end note
+
+class Context {
+  - _input : string
+  - _currentPosition : int
+  --
+  + Context(input)
+  ..
+  + getInput() : string
+  + getCurrentPosition() : int
+  + setCurrentPosition()
+  + getCurrentToken() : int
+}
+
+interface Expression {
+  + {abstract} ~Expression()
+  ..
+  + {abstract} Interpret(Context&): int
+  + {abstract} print(ostream&)
+}
+class NumberExpression {
+  - _number : int
+  --
+  + NumberExpression(number)
+  ..
+  + Interpret(Context&): Interpret
+  + print(ostream&)
+}
+class PlusExpression {
+  - _left: Expression*
+  - _right: Expression*
+  --
+  + PlusExpression(left, right)
+  + ~PlusExpression()
+  ..
+  + Interpret(Context&): Interpret
+  + print(ostream&)
+}
+class MinusExpression {
+  - _left: Expression*
+  - _right: Expression*
+  --
+  + MinusExpression(left, right)
+  + ~MinusExpression()
+  ..
+  + Interpret(Context&): Interpret
+  + print(ostream&)
+}
+
+Expression <|.. NumberExpression
+Expression <|.. PlusExpression
+Expression <|.. MinusExpression
+
+hide empty members
+
+@enduml

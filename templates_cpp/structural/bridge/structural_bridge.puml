@@ -1,0 +1,39 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+
+title [Structural] Bridge Pattern
+
+class Abstraction {
+    # _impl : Implementation*
+    --
+    + Abstraction()
+    + Abstraction(Implementation*)
+    + {abstract} ~Abstraction()
+    ..
+    + operation()
+}
+class RefinedAbstraction {
+    + operation()
+}
+
+interface Implementation {
+    + {abstract} ~Implementation()
+    ..
+    + {abstract} operationImpl()
+}
+class ImplementationA {
+    + operationImpl()
+}
+class ImplementationB {
+    + operationImpl()
+}
+
+Client --> Abstraction
+Abstraction <|-- RefinedAbstraction
+Abstraction o- Implementation
+Implementation <|.. ImplementationA
+Implementation <|.. ImplementationB
+
+hide empty members
+
+@enduml

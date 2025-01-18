@@ -1,0 +1,61 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+
+title [Behavioral] Mediator Pattern
+
+interface Subject {
+  + {abstract} ~Subject()
+  ..
+  + {abstract} getState()
+  + {abstract} setState(state)
+  + {abstract} attach(Observer*)
+  + {abstract} detach(Observer*)
+  + {abstract} notify()
+}
+class ConcreteSubject {
+  - _observers : set<Observer*>
+  - _state
+  --
+  + getState()
+  + setState(state)
+  + attach(Observer*)
+  + detach(Observer*)
+  + notify()
+}
+
+interface Observer {
+  + {abstract} ~Observer()
+  ..
+  + {abstract} update(state)
+  + {abstract} setSubject(Subject*)
+}
+class ObserverA {
+  - _subject : Subject*
+  --
+  + ObserverA()
+  + ObserverA(Subject*)
+  + ~ObserverA()
+  ..
+  + setSubject(Subject*)
+  + update(state)
+}
+class ObserverB {
+  - _subject : Subject*
+  --
+  + ObserverB()
+  + ObserverB(Subject*)
+  + ~ObserverB()
+  ..
+  + setSubject(Subject*)
+  + update(state)
+}
+
+Subject <|.. ConcreteSubject
+Observer <|.. ObserverA
+Observer <|.. ObserverB
+Subject o-> Observer
+
+
+hide empty members
+
+@enduml

@@ -1,0 +1,38 @@
+﻿@startuml
+'!pragma layout smetana
+skinparam classAttributeIconSize 0
+
+title [Behavioral] Strategy Pattern
+
+class Client
+class Context {
+    - _strategy : Strategy*
+    --
+    + Context()
+    + Context(Strategy*)
+    + ~Context()
+    ..
+    + setStrategy(Strategy*)
+    + executeStrategy(data)
+}
+
+Abstract Strategy {
+    + {abstract} ~Strategy()
+    ..
+    + {abstract} excute(data)
+}
+class StrategyA {
+    + execute(data)
+}
+class StrategyB {
+    + execute(data)
+}
+
+Client --> Context
+Context o- Strategy
+Strategy <|.. StrategyA
+Strategy <|.. StrategyB
+
+hide empty members
+
+@enduml
